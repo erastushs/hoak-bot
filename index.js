@@ -20,6 +20,10 @@ for(const file of files) {
 
 bot.on('ready', () => {
     console.log('Bot Online')
+
+    bot.user.setActivity('hoakhelp', {
+        type: "PLAYING"
+    }).catch(console.error)
 })
 
 bot.on('message', message => {
@@ -28,8 +32,7 @@ bot.on('message', message => {
     switch (args[0]) {
         case 'ping' :
             commands.get('ping').execute(message)
-            break
-
+        break
 
         case 'info':
             commands.get('info').execute(message)
