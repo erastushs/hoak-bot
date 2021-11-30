@@ -32,15 +32,19 @@ bot.on('message', message => {
     switch (args[0]) {
         case 'ping' :
             commands.get('ping').execute(message)
-        break
+            break
 
         case 'info':
             commands.get('info').execute(message)
-        break
+            break
             
         case 'help':
             commands.get('help').execute(message)
-        break
+            break
+
+        case 'clear':
+            commands.get('clear').execute(message, args)
+            break
     }
 })
 
