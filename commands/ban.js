@@ -1,10 +1,10 @@
 module.exports = {
     name: 'ban',
     description: 'Command untuk Banned member',
-    execute(Message, args) {
+    execute(Message) {
         var role = Message.member.roles.cache.find(r => r.name === '🔱Assistant of Hoak🔱')
-            if(!role) {
-                return Message.reply("Kamu bukan Admin, kamu tidak memiliki akses untuk melakukan kick")
+            if(hoakrole) {
+                return Message.reply("Kamu bukan Admin, kamu tidak memiliki akses untuk melakukan ban")
             } else {
                 const userBan = Message.mentions.users.first()
                 
@@ -15,7 +15,7 @@ module.exports = {
                         memberBan.ban({
                             reason: 'Kamu berkelakuan tidak baik'
                         }).then(() =>{
-                            Message.reply(`${userBan.Tag} sudah berhasil di ban`)
+                            Message.reply(`${userBan.tag} sudah berhasil di ban`)
                         }).catch(console.error)
                     } else {
                         Message.reply("User yang anda tag tidak ad dalam server ini")
