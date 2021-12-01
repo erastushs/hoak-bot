@@ -20,7 +20,7 @@ module.exports = {
                 }
             } else {
                 Message.channel.bulkDelete(1) 
-                Message.reply('User yang anda tag tidak ad dalam server ini')
+                Message.reply('Silahkan mention member yang ingin di ban')
             } 
         } else{
             Message.channel.bulkDelete(1)

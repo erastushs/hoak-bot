@@ -77,6 +77,10 @@ bot.on('message', message => {
         case 'kick':
             commands.get('kick').execute(message)
             break
+            
+        case 'kick':
+            commands.get('ban').execute(message)
+            break
     }
 })
 
