@@ -22,13 +22,23 @@ for(const file of files) {
 
 //greeting selamat datang
 bot.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.cache.find(ch => ch.name ==='👋-welcome-leave')
+    const welcomeEmbed = new MessageEmbed()
 
-    if (!channel) return
+    welcomeEmbed.setColor('#5cf000')
+    welcomeEmbed.setDescription(`🔰 THANK YOU FOR JOINING 🔰 \n====================================\nHello ${member} Welcome To ${member.guild.name} \n♦️ Please fill in the form <#504845048618287104>\n♦️ Please obey the rules you know\n♦️ Hope you don't do anything stupid that can get you kicked out of this server\n♦️ If there is something you want to ask\nplease contact <@398542246523437066>  or other admins, Thank you\n====================================`)
+    welcomeEmbed.setImage('https://i.gifer.com/Buo.gif')
 
-    if (member.guild.name ==='Hoak Family') {
-        channel.send(`🔰 THANK YOU FOR JOINING 🔰 \n====================================\nHello ${member} Welcome To ${member.guild.name} \n♦️ Please fill in the form <#504845048618287104>\n♦️ Please obey the rules you know\n♦️ Hope you don't do anything stupid that can get you kicked out of this server\n♦️ If there is something you want to ask\nplease contact <@398542246523437066>  or other admins, Thank you\n====================================`)
-    }
+    member.guild.channels.cache.find(ch => ch.name === '👋-welcome-leave').send(welcomeEmbed)
+})
+bot.on('guildMemberRemove', member => {
+    const goodbyeEmbed = new MessageEmbed()
+
+    goodbyeEmbed.setColor('#f00000')
+    goodbyeEmbed.setTitle('Good Bye:(')
+    goodbyeEmbed.setDescription(`We will miss you ${member}`)
+    goodbyeEmbed.setImage('https://i.imgur.com/UMoeRlr.gif')
+
+    member.guild.channels.cache.find(ch => ch.name === '👋-welcome-leave').send(goodbyeEmbed)
 })
 
 bot.on('ready', () => {
