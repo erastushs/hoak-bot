@@ -70,16 +70,8 @@ bot.on('message', message => {
             commands.get('clear').execute(message, args)
             break
 
-        case 'cooldown':        //this command error
-            if (cooldown.has(message.author.id)){
-                message.reply('Tolong jangan spam. Tunggu 5 detik')
-            } else {
-                message.channel.send('mencoba fitur cooldown')
-                cooldown.set(message.author.id)
-                setTimeout(() => {
-                    cooldown.delete(message.author.id)
-                }, 1000 * 5);
-            }
+        case 'testAdmin':
+            commands.get('testAdmin').execute(message)
             break
     }
 })
