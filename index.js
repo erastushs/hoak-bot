@@ -12,6 +12,7 @@ var creator = '<@398542246523437066>'
 
 const fs = require('fs')
 
+const cooldown = new Collection()
 
 const commands = new Collection()
 const files = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
@@ -69,7 +70,7 @@ bot.on('message', message => {
             commands.get('clear').execute(message, args)
             break
 
-        case 'cooldown':
+        case 'cooldown':        //this command error
             if (cooldown.has(message.author.id)){
                 message.reply('Tolong jangan spam. Tunggu 5 detik')
             } else {
