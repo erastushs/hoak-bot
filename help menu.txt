@@ -1,0 +1,4 @@
+My prefix is `hoak`. Use `hoak<command>` to call me ', '
+[hoakinfo](https://s.id/HoakFam) : untuk informasi bot\n
+[hoakping](https://s.id/HoakFam) : untuk mengecek apakah bot aktif\n
+[hoakclear[count]](https://s.id/HoakFam) : untuk menghapus pesan dalam text channel')\n
