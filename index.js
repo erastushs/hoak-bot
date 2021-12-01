@@ -5,7 +5,7 @@ const {
 } = require('discord.js')
 const bot = new Client
 
-const token = 'OTE1MjY4MTM5MzE3NjA4NTA5.YaZH4Q.uH401K6qKG6kEOOpwTGeRYP30Ts'
+const token = 'OTE1MjY4MTM5MzE3NjA4NTA5.YaZH4Q.sfhpKAvCP9fjL4vmncd7RKCZg4A'
 var prefix = 'hoak'
 var version = '1.0.1'
 var creator = '<@398542246523437066>'
