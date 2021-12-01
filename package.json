@@ -1,7 +1,7 @@
 {
   "name": "hoak-bot",
   "version": "1.0.0",
-  "description": "link discord https://s.id/HoakFam",
+  "description": "link discord https://s.id/HoakFamily",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
