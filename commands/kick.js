@@ -3,7 +3,7 @@ module.exports = {
     description: 'command kick member',
     execute(Message) {
         if(Message.member.roles.cache.find(r => r.name === '🔱Assistant of Hoak🔱')) {
-            const userKick = Message.mention.users.first()
+            const userKick = Message.mentions.users.first()
 
             if(userKick) {
                 memberKick = Message.guild.member(userKick)
