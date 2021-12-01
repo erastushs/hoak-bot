@@ -73,6 +73,10 @@ bot.on('message', message => {
         case 'testAdmin':
             commands.get('testAdmin').execute(message)
             break
+        
+        case 'kick':
+            commands.get('kick').execute(message)
+            break
     }
 })
 
