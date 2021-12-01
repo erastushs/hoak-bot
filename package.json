@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git + https://github.com/erastushs/bot-discord"
+    "url": "git+https://github.com/erastushs/bot-discord"
   },
   "author": "AngelOfDeath",
   "license": "ISC",
