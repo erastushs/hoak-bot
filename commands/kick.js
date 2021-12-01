@@ -24,7 +24,7 @@ module.exports = {
             } 
         } else{
             Message.channel.bulkDelete(1)
-            return Message.channel.send("Kamu bukan Admin, kamu tidak memiliki akses untuk melakukan kick")
+            return Message.reply("Kamu bukan Admin, kamu tidak memiliki akses untuk melakukan kick")
         }
     }
 }
