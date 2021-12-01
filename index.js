@@ -11,6 +11,8 @@ var version = '1.0.1'
 var creator = '<@398542246523437066>'
 
 const fs = require('fs')
+
+
 const commands = new Collection()
 const files = fs.readdirSync('./commands').filter(file => file.endsWith('.js'))
 for(const file of files) {
@@ -44,6 +46,18 @@ bot.on('message', message => {
 
         case 'clear':
             commands.get('clear').execute(message, args)
+            break
+
+        case 'cooldown':
+            if (cooldown.has(message.author.id)){
+                message.reply('Tolong jangan spam. Tunggu 5 detik')
+            } else {
+                message.channel.send('mencoba fitur cooldown')
+                cooldown.set(message.author.id)
+                setTimeout(() => {
+                    cooldown.delete(message.author.id)
+                }, 1000 * 5);
+            }
             break
     }
 })
