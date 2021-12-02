@@ -1,3 +1,7 @@
+const {
+    client
+} = require('discord.js')
+
 module.exports = {
     name: 'ping',
     description: 'ping command',
