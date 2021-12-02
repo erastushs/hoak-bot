@@ -2,7 +2,7 @@ module.exports = {
     name: 'ban',
     description: 'Command untuk Banned member',
     execute(Message) {
-        var role = Message.member.roles.cache.find(r => r.name === '🔱Assistant of Hoak🔱')
+        var role = Message.member.roles.cache.some(r=>["🔱Assistant of Hoak🔱", "⚜️Father of Hoak⚜️"].includes(r.name))
             if(!role) {
                 return Message.reply("Kamu bukan Admin, kamu tidak memiliki akses untuk melakukan ban")
             } else {

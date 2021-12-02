@@ -1,8 +1,11 @@
+const { Role } = require("discord.js")
+
 module.exports = {
     name: 'kick',
     description: 'command kick member',
     execute(Message) {
-        if(Message.member.roles.cache.find(r => r.name === '🔱Assistant of Hoak🔱')) {
+    var role= Message.member.roles.cache.some(r=>["🔱Assistant of Hoak🔱", "⚜️Father of Hoak⚜️"].includes(r.name))
+        if(role) {
             const userKick = Message.mentions.users.first()
 
             if(userKick) {
