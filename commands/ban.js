@@ -3,7 +3,7 @@ module.exports = {
     description: 'Command untuk Banned member',
     execute(Message) {
         var role = Message.member.roles.cache.find(r => r.name === '🔱Assistant of Hoak🔱')
-            if(role) {
+            if(!role) {
                 return Message.reply("Kamu bukan Admin, kamu tidak memiliki akses untuk melakukan ban")
             } else {
                 const userBan = Message.mentions.users.first()
