@@ -53,6 +53,10 @@ bot.on('message', message => {
     let args = message.content.substring(prefix.length).split(' ')
 
     switch (args[0]) {
+        case 'fam' :
+            commands.get('fam').execute(message)
+            break
+
         case 'ping' :
             commands.get('ping').execute(message)
             break
