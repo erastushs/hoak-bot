@@ -3,6 +3,6 @@ module.exports = {
     description: 'ping command',
     execute(Message) {
         Message.channel.bulkDelete(1)
-        Message.reply(`Bot latency: ${ping}, API Latency: ${client.ws.ping}`)
+        Message.reply(`🏓Latency is ${Date.now() - message.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`)
     }
 }
