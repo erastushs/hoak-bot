@@ -1,3 +1,5 @@
+const { Permissions } = require('discord.js');
+
 module.exports = {
     name: 'clear',
     description: 'menghapus pesan dalam text channel',
