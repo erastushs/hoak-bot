@@ -2,7 +2,7 @@ module.exports = {
     name: 'clear',
     description: 'menghapus pesan dalam text channel',
     execute(Message, args) {
-        var role= Message.member.roles.cache.find(["755062412801081434","755060269775978497"])
+        var role= Message.member.roles.cache.find("755062412801081434","755060269775978497")
         if (role) {
             if (!args[1]) {
                 return Message.reply('masukan jumlah chat yang akan dihapus')
