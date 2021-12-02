@@ -20,7 +20,7 @@ module.exports = {
                 }
             } else {
                 Message.channel.bulkDelete(1) 
-                Message.reply('Silahkan mention member yang ingin di ban')
+                Message.reply('Silahkan mention member yang ingin di kick')
             } 
         } else{
             Message.channel.bulkDelete(1)
