@@ -14,7 +14,7 @@ module.exports = {
         } else {
         const help = new MessageEmbed()
         .setTitle(' Hoak Fam Help Menu')
-        .addField('My prefix is `hoak`. Use `hoak<command>` to call me ', '[hoakinfo](https://s.id/HoakFam) : untuk informasi bot\n[hoakping [count]](https://s.id/HoakFamily) : untuk mengecek apakah Bot online\n\nAdministrator Command\n[hoakclear [count]](https://s.id/HoakFamily) : untuk menghapus pesan dalam text channel\n[hoakkick [count]](https://s.id/HoakFamily) : untuk mengeluarkan member dari server\n[hoakban [count]](https://s.id/HoakFamily) : untuk banned member dari server')
+        .addField('My prefix is `hoak`. Use `hoak<command>` to call me ', '[hoakinfo](https://s.id/HoakFam) : untuk informasi bot\n[hoakping [count]](https://s.id/HoakFamily) : untuk mengecek apakah Bot online\n\n__**Administrator Command**__\n[hoakclear [count]](https://s.id/HoakFamily) : untuk menghapus pesan dalam text channel\n[hoakkick [count]](https://s.id/HoakFamily) : untuk mengeluarkan member dari server\n[hoakban [count]](https://s.id/HoakFamily) : untuk banned member dari server')
         .setColor('#eb3434')
     Message.channel.send(help)
     cooldown.set(Message.author.id)
