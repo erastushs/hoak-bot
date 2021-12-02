@@ -4,7 +4,7 @@ module.exports = {
     name: 'clear',
     description: 'menghapus pesan dalam text channel',
     execute(Message, args) {
-        var role= Messege.member.permissions.cache.has(Permissions.FLAGS.ADMINISTRATOR)
+        var role= has(Permissions.FLAGS.ADMINISTRATOR)
         if (role) {
             if (!args[1]) {
                 return Message.reply('masukan jumlah chat yang akan dihapus')
