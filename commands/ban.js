@@ -16,7 +16,11 @@ module.exports = {
                             reason: 'Kamu berkelakuan tidak baik'
                         }).then(() =>{
                             Message.reply(`${userBan.tag} sudah berhasil di ban`)
-                        }).catch(console.error)
+                        }).catch(err => {
+                            Message.channel.bulkDelete(1)
+                            Message.reply("Saya tidak bisa melakukan ban pada member ini")
+                            console.log(err)
+                        })
                     } else {
                         Message.reply("User yang anda tag tidak ad dalam server ini")
                     }
