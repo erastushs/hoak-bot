@@ -4,11 +4,22 @@ const config = require("../config.json");
 module.exports = {
   name: "message",
   execute(msg) {
-    let args = msg.content.substring(config.prefix.length).split(" ");
+    if (msg.author.bot) return;
 
+    //panggil prefix
+    let prefixChoose = "";
+    config.prefixes.forEach((prefix) => {
+      if (msg.content.startsWith(prefix)) {
+        prefixChoose = prefix;
+      }
+    });
+    if (!prefixChoose) return;
+    let args = msg.content.substring(prefixChoose.length).split(" ");
+
+    //execute command
     switch (args[0]) {
       case "fam":
-        commands.get("fam").execute(msg);
+        commands.get("fam").execute(msg, args);
         break;
 
       case "ping":
@@ -34,6 +45,15 @@ module.exports = {
       case "ban":
         commands.get("ban").execute(msg);
         break;
+
+      case "f":
+        commands.get("f").execute(msg);
+        break;
+
+      case "avatar":
+        commands.get("avatar").execute(msg, args);
+        break;
+
     }
   },
 };

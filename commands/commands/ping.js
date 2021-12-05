@@ -8,8 +8,7 @@ module.exports = {
     if (cooldown.has(msg.author.id)) {
       msg.reply("Please dont spam. Wait 10 seconds");
     } else {
-      msg.channel.bulkDelete(1);
-      msg.channel.send(`Bot latency: ${Date.now() - msg.createdTimestamp}ms.`);
+      msg.channel.send(`My latency is ${Date.now() - msg.createdTimestamp}ms.`);
       cooldown.set(msg.author.id);
       setTimeout(() => {
         cooldown.delete(msg.author.id);

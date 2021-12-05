@@ -29,7 +29,7 @@ for (const file of eventFiles) {
 
 //bot activity
 bot.on("ready", () => {
-  console.log("Bot Online");
+  console.log(` ${bot.user.tag} is online `);
   bot.user
     .setActivity("hoakhelp", {
       type: "PLAYING",
