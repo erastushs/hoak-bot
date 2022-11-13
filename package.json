@@ -1,13 +1,9 @@
 {
   "name": "hoak-bot",
-  "version": "1.0.0",
-  "description": "link discord https://s.id/HoakFamily",
+  "version": "2.0.0",
+  "description": "link discord https://discord.io/HoakFamily",
   "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "node .": "node run index.js"
-
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/erastushs/bot-discord"
@@ -15,6 +11,6 @@
   "author": "AngelOfDeath",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^12.5.3"
+    "discord.js": "^13.12.0"
   }
 }

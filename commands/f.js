@@ -10,7 +10,7 @@ module.exports = {
       msg.reply("Please dont spam. Wait 10 seconds to use this command again");
     } else {
       const f = new MessageEmbed().setImage("https://i.imgur.com/r2i52Vu.gif");
-      msg.channel.send(f);
+      msg.channel.send({ embeds: [f] });
       cooldown.set(msg.author.id);
       setTimeout(() => {
         cooldown.delete(msg.author.id);

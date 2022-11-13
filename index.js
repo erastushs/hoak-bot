@@ -1,23 +1,9 @@
-//list const
-const { Client } = require("discord.js");
-const bot = new Client();
-const config = require("./config.json");
+const { Client, Intents } = require("discord.js");
+const bot = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] });
+const config = require("./utils/config.json");
 const fs = require("fs");
 
-//greeting selamat datang
-bot.on("guildMemberAdd", (member) => {
-  const welcome = require("./features/guildMemberAdd");
-  welcome.execute(member);
-});
-bot.on("guildMemberRemove", (member) => {
-  const leave = require("./features/guildMemberRemove");
-  leave.execute(member);
-});
-
-//panggil folder events
-const eventFiles = fs
-  .readdirSync("./events")
-  .filter((file) => file.endsWith(".js"));
+const eventFiles = fs.readdirSync("./events").filter((file) => file.endsWith(".js"));
 for (const file of eventFiles) {
   const event = require(`./events/${file}`);
   if (event.once) {
@@ -27,14 +13,4 @@ for (const file of eventFiles) {
   }
 }
 
-//bot activity
-bot.on("ready", () => {
-  console.log(` ${bot.user.tag} is online `);
-  bot.user
-    .setActivity("hoakhelp", {
-      type: "PLAYING",
-    })
-    .catch(console.error);
-});
-
-bot.login(process.env.TOKEN)
+bot.login(config.TOKEN);

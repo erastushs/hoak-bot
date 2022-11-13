@@ -1,8 +1,8 @@
-const commands = require("../commands/commandHandler");
-const config = require("../config.json");
+const commands = require("../config/commandHandler");
+const config = require("../utils/config.json");
 
 module.exports = {
-  name: "message",
+  name: "messageCreate",
   execute(msg) {
     if (msg.author.bot) return;
 
@@ -17,6 +17,7 @@ module.exports = {
     let args = msg.content.substring(prefixChoose.length).split(" ");
 
     //execute command
+    // commands.get(args[0]).execute(msg, args);
     switch (args[0]) {
       case "fam":
         commands.get("fam").execute(msg, args);
@@ -53,7 +54,6 @@ module.exports = {
       case "avatar":
         commands.get("avatar").execute(msg, args);
         break;
-
     }
   },
 };

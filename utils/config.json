@@ -1,0 +1,8 @@
+{
+  "bot_name": "Hoak Fam",
+  "TOKEN": "YOUR_TOKEN",
+  "creator": "<@398542246523437066>",
+  "version": "2.0 alpa",
+  "prefixes": ["hoak", "HOAK", "Hoak"],
+  "library": "Node.Js 19.0.1 \n Discord.Js 13.12.0"
+}

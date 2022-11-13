@@ -7,10 +7,7 @@ module.exports = {
   execute(msg, args) {
     msg.channel.bulkDelete(1);
 
-    let member =
-      msg.mentions.users.first() ||
-      msg.guild.members.cache.get(args[0]) ||
-      msg.author;
+    let member = msg.mentions.users.first() || msg.guild.members.cache.get(args[0]) || msg.author;
 
     msg.channel.send(`${member} **HOAK! HOAK! HOAK! SEMUANYA HOAK!**`);
     cooldown.set(msg.author.id);
