@@ -3,7 +3,9 @@
   "version": "2.0.0",
   "description": "link discord https://discord.io/HoakFamily",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node deploy-commands.js && nodemon"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/erastushs/bot-discord"
@@ -11,6 +13,9 @@
   "author": "AngelOfDeath",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/builders": "^1.3.0",
+    "@discordjs/rest": "^1.3.0",
+    "discord-api-types": "^0.37.17",
     "discord.js": "^13.12.0"
   }
 }

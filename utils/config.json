@@ -1,6 +1,8 @@
 {
   "bot_name": "Hoak Fam",
-  "TOKEN": "YOUR_TOKEN",
+  "token": "YOUR_TOKEN",
+  "clientId": "915268139317608509",
+  "guildId": "504841992900182027",
   "creator": "<@398542246523437066>",
   "version": "2.0 alpa",
   "prefixes": ["hoak", "HOAK", "Hoak"],

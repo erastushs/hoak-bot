@@ -13,9 +13,8 @@ module.exports = {
       let img = member.displayAvatarURL({ size: 1024, dynamic: true });
 
       const avatar = new MessageEmbed()
-        .setAuthor({ name: `${member.username}`, iconURL: `${img}` })
         .setImage(img)
-        .setColor("#d303fc")
+        .setColor("#202225")
         .setAuthor({ name: `${member.username}`, url: `${img}`, iconURL: `${img}` });
       msg.channel.send({ embeds: [avatar] });
       cooldown.set(msg.author.id);

@@ -13,4 +13,4 @@ for (const file of eventFiles) {
   }
 }
 
-bot.login(config.TOKEN);
+bot.login(config.token);
