@@ -1,6 +1,7 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
+const { option } = require("./commands/interactions/avatar");
 const { token, clientId, guildId } = require("./utils/config.json");
 
 const commands = [
@@ -9,7 +10,12 @@ const commands = [
     .setDescription("display a user's avatar")
     .addUserOption((option) => option.setName("user").setDescription("The member target").setRequired(false)),
   new SlashCommandBuilder().setName("ban").setDescription("ban a member"),
-  new SlashCommandBuilder().setName("clear").setDescription("delete messages form a channel"),
+  new SlashCommandBuilder()
+    .setName("clear")
+    .setDescription("delete messages form a channel")
+    .addNumberOption((option) =>
+      option.setName("amount").setDescription("the number of messages to be deleted").setRequired(false)
+    ),
   new SlashCommandBuilder().setName("f").setDescription("f to pay respect"),
   new SlashCommandBuilder().setName("fam").setDescription("HOAK HOAK HOAK SEMUANYA HOAK!"),
   new SlashCommandBuilder().setName("help").setDescription("Need Help?"),
