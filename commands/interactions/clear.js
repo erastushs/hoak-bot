@@ -12,9 +12,7 @@ module.exports = {
     },
   ],
   execute(interaction) {
-    const role = interaction.member.roles.cache.some((r) =>
-      ["🔱Assistant of Hoak🔱", "⚜️Father of Hoak⚜️", "Assistant of Hoak", "Father of Hoak"].includes(r.name)
-    );
+    const role = interaction.member.permissions.has("ADMINISTRATOR");
     const amount = interaction.options.getNumber("amount");
     if (role) {
       if (!amount) {

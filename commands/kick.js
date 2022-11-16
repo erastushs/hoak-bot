@@ -4,9 +4,7 @@ module.exports = {
   name: "kick",
   description: "command kick member",
   execute(msg) {
-    var role = msg.member.roles.cache.some((r) =>
-      ["🔱Assistant of Hoak🔱", "⚜️Father of Hoak⚜️"].includes(r.name)
-    );
+    const role = interaction.member.permissions.has("ADMINISTRATOR");
     if (role) {
       const userKick = msg.mentions.users.first();
 
@@ -19,9 +17,7 @@ module.exports = {
             .then(() => {
               const kick = new MessageEmbed()
                 .setAuthor("KICKED BY ADMIN", "https://i.imgur.com/AXLGdp1.jpg")
-                .setDescription(
-                  `**${userKick.tag}** has been successfully kicked from this server`
-                )
+                .setDescription(`**${userKick.tag}** has been successfully kicked from this server`)
                 .setColor("#ff0000");
               msg.channel.bulkDelete(1);
               msg.channel.send(kick);

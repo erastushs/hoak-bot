@@ -4,9 +4,7 @@ module.exports = {
   name: "ban",
   description: "Banned member from server",
   execute(msg) {
-    var role = msg.member.roles.cache.some((r) =>
-      ["🔱Assistant of Hoak🔱", "⚜️Father of Hoak⚜️"].includes(r.name)
-    );
+    const role = interaction.member.permissions.has("ADMINISTRATOR");
     if (!role) {
       return msg.reply("**You don't have permission to use this command**");
     } else {
@@ -23,9 +21,7 @@ module.exports = {
             .then(() => {
               const ban = new MessageEmbed()
                 .setAuthor("BANNED BY ADMIN", "https://i.imgur.com/AXLGdp1.jpg")
-                .setDescription(
-                  `**${userBan.tag}** has been successfully banned from this server`
-                )
+                .setDescription(`**${userBan.tag}** has been successfully banned from this server`)
                 .setColor("#ff0000");
               msg.channel.bulkDelete(1);
               msg.channel.send(ban);
