@@ -19,9 +19,6 @@ module.exports = {
     if (role) {
       if (!amount) {
         return interaction.reply("**Please enter the amount of messages that you want to clear!**");
-      }
-      if (isNaN(amount)) {
-        return interaction.reply("**Please enter real number!**");
       } else {
         interaction.reply(`DELETING MESSAGES ...`);
         setTimeout(() => {
