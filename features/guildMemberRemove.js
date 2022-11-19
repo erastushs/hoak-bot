@@ -1,4 +1,7 @@
 const { MessageEmbed } = require("discord.js");
+const moment = require("moment");
+
+const leaveChannelId = "523371374279131156";
 
 module.exports = {
   name: "guildMemberRemove",
@@ -11,7 +14,10 @@ module.exports = {
     goodbyeEmbed.setDescription(`We will miss you **${member.user.tag}**`);
     goodbyeEmbed.setThumbnail(member.displayAvatarURL({ size: 1024, dynamic: true }));
     goodbyeEmbed.setImage("https://i.imgur.com/UMoeRlr.gif");
+    goodbyeEmbed.setFooter({
+      text: `${member.user.tag} Leave at ${moment().format("L")} ${moment().format("LT")}`,
+    });
 
-    member.guild.channels.cache.find((ch) => ch.name === "👋-welcome-leave").send({ embeds: [goodbyeEmbed] });
+    member.guild.channels.cache.get(leaveChannelId).send({ embeds: [goodbyeEmbed] });
   },
 };

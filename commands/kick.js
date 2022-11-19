@@ -4,7 +4,7 @@ module.exports = {
   name: "kick",
   description: "command kick member",
   execute(msg) {
-    const role = interaction.member.permissions.has("ADMINISTRATOR");
+    const role = msg.member.permissions.has("ADMINISTRATOR");
     if (role) {
       const userKick = msg.mentions.users.first();
 

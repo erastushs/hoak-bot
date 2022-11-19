@@ -4,7 +4,7 @@ module.exports = {
   name: "ban",
   description: "Banned member from server",
   execute(msg) {
-    const role = interaction.member.permissions.has("ADMINISTRATOR");
+    const role = msg.member.permissions.has("ADMINISTRATOR");
     if (!role) {
       return msg.reply("**You don't have permission to use this command**");
     } else {

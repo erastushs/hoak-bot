@@ -1,4 +1,7 @@
 const { MessageEmbed } = require("discord.js");
+const moment = require("moment");
+
+const welcomeChannelId = "523371374279131156";
 
 module.exports = {
   name: "guildMemberAdd",
@@ -12,7 +15,10 @@ module.exports = {
     );
     welcomeEmbed.setThumbnail(member.displayAvatarURL({ size: 1024, dynamic: true }));
     welcomeEmbed.setImage("https://i.gifer.com/Buo.gif");
+    welcomeEmbed.setFooter({
+      text: `${member.user.tag} Joined at ${moment().format("L")} ${moment().format("LT")}`,
+    });
 
-    member.guild.channels.cache.find((ch) => ch.name === "👋-welcome-leave").send({ embeds: [welcomeEmbed] });
+    member.guild.channels.cache.get(welcomeChannelId).send({ embeds: [welcomeEmbed] });
   },
 };
