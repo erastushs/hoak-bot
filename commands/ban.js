@@ -2,40 +2,33 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "ban",
-  description: "Banned member from server",
+  description: "command ban member",
   execute(msg) {
     const role = msg.member.permissions.has("ADMINISTRATOR");
-    if (!role) {
-      return msg.reply("**You don't have permission to use this command**");
-    } else {
-      const userBan = msg.mentions.users.first();
+    if (role) {
+      const userban = msg.mentions.users.first();
 
-      if (userBan) {
-        const memberBan = msg.guild.member(userBan);
-
-        if (memberBan) {
-          memberBan
-            .ban({
-              reason: "Breaking server rules ",
-            })
-            .then(() => {
-              const ban = new MessageEmbed()
-                .setAuthor("BANNED BY ADMIN", "https://i.imgur.com/AXLGdp1.jpg")
-                .setDescription(`**${userBan.tag}** has been successfully banned from this server`)
-                .setColor("#ff0000");
-              msg.channel.bulkDelete(1);
-              msg.channel.send(ban);
-            })
-            .catch((err) => {
-              msg.channel.bulkDelete(1);
-              msg.reply(`I cant ban **${userBan.tag}**`);
-            });
-        } else {
-          msg.reply("The member you tagged is not in this server");
-        }
+      if (userban) {
+        msg.guild.members
+          .ban(userban, "You are baned from the server")
+          .then(() => {
+            console.log("sukses ");
+            const ban = new MessageEmbed()
+              .setAuthor("Banned BY ADMIN", "https://i.imgur.com/AXLGdp1.jpg")
+              .setDescription(`**${userban.tag}** has been successfully baned from this server`)
+              .setColor("#ff0000");
+            msg.channel.bulkDelete(1);
+            msg.channel.send({ embeds: [ban] });
+          })
+          .catch((err) => {
+            msg.channel.bulkDelete(1);
+            msg.reply(`I cant ban **${userban.tag}**`);
+          });
       } else {
         msg.reply("Please mention the member you want to ban");
       }
+    } else {
+      return msg.reply("**You don't have permission to use this command**");
     }
   },
 };
