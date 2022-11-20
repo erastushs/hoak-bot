@@ -24,7 +24,7 @@ module.exports = {
         }, 1000 * 1.5);
         interaction.channel.bulkDelete(parseInt(amount));
         setTimeout(() => {
-          interaction.channel.bulkDelete(1);
+          interaction.deleteReply();
         }, 1000 * 3);
       }
     } else {

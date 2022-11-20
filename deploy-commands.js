@@ -21,7 +21,10 @@ const commands = [
         .setRequired(false)
     ),
   new SlashCommandBuilder().setName("f").setDescription("f to pay respect"),
-  new SlashCommandBuilder().setName("fam").setDescription("HOAK HOAK HOAK SEMUANYA HOAK!"),
+  new SlashCommandBuilder()
+    .setName("fam")
+    .setDescription("HOAK HOAK HOAK SEMUANYA HOAK!")
+    .addUserOption((option) => option.setName("user").setDescription("The member target").setRequired(false)),
   new SlashCommandBuilder().setName("help").setDescription("Need Help?"),
   new SlashCommandBuilder().setName("info").setDescription("Information about me"),
   new SlashCommandBuilder().setName("kick").setDescription("kick a member"),

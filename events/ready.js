@@ -3,7 +3,7 @@ module.exports = {
   execute(bot) {
     console.log(` ${bot.user.tag} is online `);
     bot.user.setActivity("hoakhelp", {
-      type: "PLAYING",
+      type: "LISTENING",
     });
   },
 };
