@@ -10,9 +10,9 @@ module.exports = {
       msg.reply("Please dont spam. Wait 10 seconds");
     } else {
       const help = new MessageEmbed()
-        .setTitle(" Hoak Fam Help Menu")
+        .setTitle(" **My prefix is `hoak`. Use `hoak`<command> to call me or use `/`**")
         .setDescription(
-          "**My prefix is `hoak`. Use `hoak`<command> to call me** \n[info](https://s.id/HoakFam)    : Information about me\n[ping](https://s.id/HoakFamily) : Bot latency test\n[fam](https://s.id/HoakFamily)  : Motto of HoakFamily\n[f](https://s.id/HoakFamily)  : Give a respect\n[avatar](https://s.id/HoakFamily)  : check avatar user\n\n__**Administrator Command**__\n[clear](https://s.id/HoakFamily): Delete some messages in the text channel\n[kick](https://s.id/HoakFamily) : Remove member from server\n[ban](https://s.id/HoakFamily)  : Banned member from server"
+          "**General Commands**\n`avatar` : :frame_photo: Display a user's avatar\n`f` : <:F_in_the_chat:890638001108041778>  Give a respect.\n`fam`: <:Hoak:796381557619294208>   Motto of HoakFamily.\n`info`: :notepad_spiral: Information about me.\n`ping`: :ping_pong: Test the bots response time.\n\n**Administrator Command**\n`clear`: :broom: Delete messages form a channel\n`kick`:<:emoji_10:802925963804540958>   Kick a member.\n`ban`: <:cheems_triggered:890637387556876349>  Ban a member."
         )
         .setColor("#eb3434");
       msg.channel.send({ embeds: [help] });

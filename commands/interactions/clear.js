@@ -25,7 +25,7 @@ module.exports = {
         interaction.channel.bulkDelete(parseInt(amount));
         setTimeout(() => {
           interaction.deleteReply();
-        }, 1000 * 3);
+        }, 1000 * 4);
       }
     } else {
       interaction.reply("**You dont have permission to use this command**");

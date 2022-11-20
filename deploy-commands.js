@@ -28,7 +28,7 @@ const commands = [
   new SlashCommandBuilder().setName("help").setDescription("Need Help?"),
   new SlashCommandBuilder().setName("info").setDescription("Information about me"),
   new SlashCommandBuilder().setName("kick").setDescription("kick a member"),
-  new SlashCommandBuilder().setName("ping").setDescription("ping command"),
+  new SlashCommandBuilder().setName("ping").setDescription("Test the bots response time."),
 ].map((command) => command.toJSON());
 
 const rest = new REST({ version: "9" }).setToken(token);
