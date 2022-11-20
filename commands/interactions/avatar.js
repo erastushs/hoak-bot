@@ -1,5 +1,4 @@
-const { MessageEmbed, Collection } = require("discord.js");
-const cooldown = new Collection();
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "avatar",

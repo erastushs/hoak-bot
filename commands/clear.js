@@ -10,7 +10,11 @@ module.exports = {
       if (isNaN(args[1])) {
         return msg.channel.send("**Please enter real number!**");
       } else {
-        msg.channel.bulkDelete(parseInt(args[1]));
+        if (parseInt(args[1]) <= 100) {
+          msg.channel.bulkDelete();
+        } else {
+          return msg.channel.send("**Sorry, just can only delete a maximum of 100 messages**");
+        }
       }
     } else {
       msg.reply("**You dont have permission to use this command**");

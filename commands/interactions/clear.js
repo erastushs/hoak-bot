@@ -21,7 +21,7 @@ module.exports = {
         interaction.reply(`DELETING MESSAGES ...`);
         setTimeout(() => {
           interaction.editReply(codeBlock("js", `${amount} messages have been deleted`));
-        }, 1000 * 1);
+        }, 1000 * 1.5);
         interaction.channel.bulkDelete(parseInt(amount));
         setTimeout(() => {
           interaction.channel.bulkDelete(1);

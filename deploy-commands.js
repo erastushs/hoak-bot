@@ -1,7 +1,6 @@
 const { SlashCommandBuilder } = require("@discordjs/builders");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
-const { option } = require("./commands/interactions/avatar");
 const { token, clientId, guildId } = require("./utils/config.json");
 
 const commands = [
@@ -14,7 +13,12 @@ const commands = [
     .setName("clear")
     .setDescription("delete messages form a channel")
     .addNumberOption((option) =>
-      option.setName("amount").setDescription("the number of messages to be deleted").setRequired(false)
+      option
+        .setName("amount")
+        .setDescription("the number of messages to be deleted")
+        .setMinValue(1)
+        .setMaxValue(100)
+        .setRequired(false)
     ),
   new SlashCommandBuilder().setName("f").setDescription("f to pay respect"),
   new SlashCommandBuilder().setName("fam").setDescription("HOAK HOAK HOAK SEMUANYA HOAK!"),
