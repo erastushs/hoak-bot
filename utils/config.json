@@ -1,10 +1,12 @@
 {
   "bot_name": "Hoak Fam",
-  "token": "YOUR_TOKEN",
+  "prefixes": ["hoak", "HOAK", "Hoak"],
+  "token": "OTE1MjY4MTM5MzE3NjA4NTA5.GYHCfi.PaB65fh7q9_HD_3_lLeU8j8pY0kyD6WR06TBI0",
   "clientId": "915268139317608509",
   "guildId": "504841992900182027",
+  "welcomeChannelId": "523371374279131156",
+  "leaveChannelId": "523371374279131156",
   "creator": "<@398542246523437066>",
   "version": "2.0 alpa",
-  "prefixes": ["hoak", "HOAK", "Hoak"],
-  "library": "Node.Js 19.0.1 \n Discord.Js 13.12.0"
+  "library": "Node.Js 19.0.1 \n Discord.Js 13.12.0 \n moment 2.29.4"
 }

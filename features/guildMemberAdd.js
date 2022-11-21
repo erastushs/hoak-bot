@@ -1,7 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const moment = require("moment");
-
-const welcomeChannelId = "523371374279131156";
+const config = require("../utils/config.json");
 
 module.exports = {
   name: "guildMemberAdd",
@@ -19,6 +18,6 @@ module.exports = {
       text: `${member.user.tag} Joined at ${moment().format("L")} ${moment().format("LT")}`,
     });
 
-    member.guild.channels.cache.get(welcomeChannelId).send({ embeds: [welcomeEmbed] });
+    member.guild.channels.cache.get(config.welcomeChannelId).send({ embeds: [welcomeEmbed] });
   },
 };

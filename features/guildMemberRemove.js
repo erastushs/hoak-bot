@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const moment = require("moment");
 
-const leaveChannelId = "523371374279131156";
+const config = require("../utils/config.json");
 
 module.exports = {
   name: "guildMemberRemove",
@@ -18,6 +18,6 @@ module.exports = {
       text: `${member.user.tag} Leave at ${moment().format("L")} ${moment().format("LT")}`,
     });
 
-    member.guild.channels.cache.get(leaveChannelId).send({ embeds: [goodbyeEmbed] });
+    member.guild.channels.cache.get(config.leaveChannelId).send({ embeds: [goodbyeEmbed] });
   },
 };
