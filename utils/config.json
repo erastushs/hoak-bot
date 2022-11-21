@@ -1,12 +1,12 @@
 {
-  "bot_name": "Hoak Fam",
-  "prefixes": ["hoak", "HOAK", "Hoak"],
-  "token": "OTE1MjY4MTM5MzE3NjA4NTA5.GYHCfi.PaB65fh7q9_HD_3_lLeU8j8pY0kyD6WR06TBI0",
-  "clientId": "915268139317608509",
-  "guildId": "504841992900182027",
-  "welcomeChannelId": "523371374279131156",
-  "leaveChannelId": "523371374279131156",
-  "creator": "<@398542246523437066>",
-  "version": "2.0 alpa",
+  "bot_name": "Your_bot_name",
+  "prefixes": ["Bot_Prefixes"],
+  "token": "Your_Token",
+  "clientId": "Bot_id",
+  "guildId": "Server_Id",
+  "welcomeChannelId": "Welcome_channel_id",
+  "leaveChannelId": "Leave_channel_id",
+  "creator": "Your discord Id, example <@398542246523437066>",
+  "version": "2.0 ",
   "library": "Node.Js 19.0.1 \n Discord.Js 13.12.0 \n moment 2.29.4"
 }

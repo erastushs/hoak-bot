@@ -1,10 +1,9 @@
-const { Message } = require("discord.js");
 const commands = require("../config/commandHandler");
 const config = require("../utils/config.json");
 
 module.exports = {
   name: "messageCreate",
-  execute(msg) {
+  execute(msg, bot) {
     if (msg.author.bot) return;
 
     //panggil prefix
@@ -20,6 +19,6 @@ module.exports = {
     //execute command
     if (args == "") return;
     if (!commands.has(args[0])) return;
-    commands.get(args[0]).execute(msg, args);
+    commands.get(args[0]).execute(msg, args, bot);
   },
 };

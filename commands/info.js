@@ -5,13 +5,17 @@ const config = require("../utils/config.json");
 module.exports = {
   name: "info",
   description: "Information about me",
-  execute(msg) {
-    // msg.channel.bulkDelete(1);
+  execute(msg, args, bot) {
     if (cooldown.has(msg.author.id)) {
       msg.reply("Please dont spam. Wait 10 seconds");
     } else {
       const info = new MessageEmbed()
-        .setTitle(" Hoak Fam Information")
+        .setAuthor({
+          name: `${bot.user.username}`,
+          url: `https://discord.io/HoakFamily`,
+          iconURL: `${bot.user.displayAvatarURL({ size: 1024, dynamic: true })}`,
+        })
+
         .addFields(
           {
             name: "Author",
@@ -27,7 +31,7 @@ module.exports = {
           }
         )
         .setColor("#34ebe8");
-      msg.channel.send({ embeds: [info] });
+      msg.reply({ embeds: [info] });
       cooldown.set(msg.author.id);
       setTimeout(() => {
         cooldown.delete(msg.author.id);
