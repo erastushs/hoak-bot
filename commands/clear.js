@@ -11,7 +11,7 @@ module.exports = {
         return msg.channel.send("**Please enter real number!**");
       } else {
         if (parseInt(args[1]) <= 100) {
-          msg.channel.bulkDelete();
+          msg.channel.bulkDelete(args[1]);
         } else {
           return msg.channel.send("**Sorry, just can only delete a maximum of 100 messages**");
         }
