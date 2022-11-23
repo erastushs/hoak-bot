@@ -8,7 +8,10 @@ const commands = [
     .setName("avatar")
     .setDescription("display a user's avatar")
     .addUserOption((option) => option.setName("user").setDescription("The member target").setRequired(false)),
-  new SlashCommandBuilder().setName("ban").setDescription("ban a member"),
+  new SlashCommandBuilder()
+    .setName("ban")
+    .setDescription("ban a member")
+    .addUserOption((option) => option.setName("user").setDescription("The member target").setRequired(true)),
   new SlashCommandBuilder()
     .setName("clear")
     .setDescription("delete messages form a channel")
@@ -27,7 +30,10 @@ const commands = [
     .addUserOption((option) => option.setName("user").setDescription("The member target").setRequired(false)),
   new SlashCommandBuilder().setName("help").setDescription("Need Help?"),
   new SlashCommandBuilder().setName("info").setDescription("Information about me"),
-  new SlashCommandBuilder().setName("kick").setDescription("kick a member"),
+  new SlashCommandBuilder()
+    .setName("kick")
+    .setDescription("kick a member")
+    .addUserOption((option) => option.setName("user").setDescription("The member target").setRequired(true)),
   new SlashCommandBuilder().setName("ping").setDescription("Test the bots response time."),
 ].map((command) => command.toJSON());
 

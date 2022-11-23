@@ -2,33 +2,36 @@ const { MessageEmbed } = require("discord.js");
 
 module.exports = {
   name: "ban",
-  description: "command ban member",
-  execute(msg) {
+  description: "ban a member",
+  async execute(msg) {
     const role = msg.member.permissions.has("ADMINISTRATOR");
     if (role) {
-      const userban = msg.mentions.users.first();
+      const userBan = msg.mentions.users.first();
 
-      if (userban) {
-        msg.guild.members
-          .ban(userban, "You are baned from the server")
-          .then(() => {
-            console.log("sukses ");
+      if (userBan) {
+        await msg.guild.members
+          .ban(userBan, { reason: "You are banned from the server" })
+          .then(async () => {
             const ban = new MessageEmbed()
-              .setAuthor("Banned BY ADMIN", "https://i.imgur.com/AXLGdp1.jpg")
-              .setDescription(`**${userban.tag}** has been successfully baned from this server`)
+              .setAuthor({
+                name: `Banned by ${msg.author.username}`,
+                iconURL:
+                  "https://media.discordapp.net/attachments/915469705219829771/1045041557990015036/f05852ae9e50c02a6b1d97d9f44cea41.jpg?width=1216&height=946",
+              })
+              .setDescription(`**${userBan.tag}** has been successfully baned from this server`)
               .setColor("#ff0000");
             msg.channel.bulkDelete(1);
-            msg.channel.send({ embeds: [ban] });
+            await msg.channel.send({ embeds: [ban] });
           })
-          .catch((err) => {
-            msg.channel.bulkDelete(1);
-            msg.reply(`I cant ban **${userban.tag}**`);
+          .catch(async (err) => {
+            console.log(err);
+            await msg.reply(`I cant ban **${userBan.tag}**`);
           });
       } else {
-        msg.reply("Please mention the member you want to ban");
+        await msg.reply("Please mention the member you want to ban");
       }
     } else {
-      return msg.reply("**You don't have permission to use this command**");
+      await msg.reply("**You don't have permission to use this command**");
     }
   },
 };
