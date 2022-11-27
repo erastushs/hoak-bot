@@ -6,6 +6,7 @@
   "guildId": "Server_Id",
   "welcomeChannelId": "Welcome_channel_id",
   "leaveChannelId": "Leave_channel_id",
+  "logChannelId": "Logs_channel_id",
   "creator": "Your discord Id, example <@398542246523437066>",
   "version": "2.0 ",
   "library": "Node.Js 19.0.1 \n Discord.Js 13.12.0 \n moment 2.29.4"

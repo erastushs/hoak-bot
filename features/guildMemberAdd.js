@@ -15,7 +15,7 @@ module.exports = {
     welcomeEmbed.setThumbnail(member.displayAvatarURL({ size: 1024, dynamic: true }));
     welcomeEmbed.setImage("https://i.gifer.com/Buo.gif");
     welcomeEmbed.setFooter({
-      text: `${member.user.tag} Joined at ${moment().format("L")} ${moment().format("LT")}`,
+      text: `${member.user.tag} Joined ${moment().calendar()}`,
     });
 
     member.guild.channels.cache.get(config.welcomeChannelId).send({ embeds: [welcomeEmbed] });

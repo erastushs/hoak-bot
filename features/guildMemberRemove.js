@@ -15,7 +15,7 @@ module.exports = {
     goodbyeEmbed.setThumbnail(member.displayAvatarURL({ size: 1024, dynamic: true }));
     goodbyeEmbed.setImage("https://i.imgur.com/UMoeRlr.gif");
     goodbyeEmbed.setFooter({
-      text: `${member.user.tag} Leave at ${moment().format("L")} ${moment().format("LT")}`,
+      text: `${member.user.tag} Leave ${moment().calendar()}`,
     });
 
     member.guild.channels.cache.get(config.leaveChannelId).send({ embeds: [goodbyeEmbed] });
