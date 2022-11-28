@@ -4,8 +4,8 @@
   "description": "link discord https://discord.io/HoakFamily",
   "main": "index.js",
   "scripts": {
-    "go": "node deploy-commands.js && nodemon",
-    "deploy": "node deploy-commands.js "
+    "go": "nodemon",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
