@@ -1,13 +1,13 @@
-const interations = require("../config/interactionHandler");
+const interations = require('../config/interactionHandler')
 
 module.exports = {
-  name: "interactionCreate",
+  name: 'interactionCreate',
   execute(interation, bot) {
-    if (!interation.isCommand()) return;
+    if (!interation.isCommand()) return
 
-    const { commandName } = interation;
+    const { commandName } = interation
 
-    if (!interations.has(commandName)) return;
-    interations.get(commandName).execute(interation, bot);
-  },
-};
+    if (!interations.has(commandName)) return
+    interations.get(commandName).execute(interation, bot)
+  }
+}

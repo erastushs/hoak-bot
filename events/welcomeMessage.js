@@ -1,7 +1,7 @@
 module.exports = {
-  name: "guildMemberAdd",
+  name: 'guildMemberAdd',
   execute(member) {
-    const welcome = require("../features/guildMemberAdd");
-    welcome.execute(member);
-  },
-};
+    const welcome = require('../features/guildMemberAdd')
+    welcome.execute(member)
+  }
+}

@@ -1,33 +1,32 @@
-const { MessageEmbed } = require("discord.js");
-const moment = require("moment");
-const config = require("../../utils/config.json");
+const { MessageEmbed } = require('discord.js')
+const config = require('../../utils/config.json')
 
 module.exports = {
-  name: "info",
-  description: "Information about me",
+  name: 'info',
+  description: 'Information about me',
   execute(interaction, bot) {
     const info = new MessageEmbed()
       .setAuthor({
         name: `${bot.user.username}`,
-        url: `https://discord.io/HoakFamily`,
-        iconURL: `${bot.user.displayAvatarURL({ size: 1024, dynamic: true })}`,
+        url: 'https://discord.io/HoakFamily',
+        iconURL: `${bot.user.displayAvatarURL({ size: 1024, dynamic: true })}`
       })
 
       .addFields(
         {
-          name: "Author",
-          value: config.creator,
+          name: 'Author',
+          value: config.creator
         },
         {
-          name: "Version",
-          value: config.version,
+          name: 'Version',
+          value: config.version
         },
         {
-          name: "Library",
-          value: config.library,
+          name: 'Library',
+          value: config.library
         }
       )
-      .setColor("#34ebe8");
-    interaction.reply({ embeds: [info] });
-  },
-};
+      .setColor('#34ebe8')
+    interaction.reply({ embeds: [info] })
+  }
+}

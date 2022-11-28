@@ -1,7 +1,7 @@
 module.exports = {
-  name: "guildMemberRemove",
+  name: 'guildMemberRemove',
   execute(member) {
-    const leave = require("../features/guildMemberRemove");
-    leave.execute(member);
-  },
-};
+    const leave = require('../features/guildMemberRemove')
+    leave.execute(member)
+  }
+}

@@ -1,9 +1,10 @@
+const { logger } = require('../utils/logger.js')
 module.exports = {
-  name: "ready",
+  name: 'ready',
   execute(bot) {
-    console.log(` ${bot.user.tag} is online `);
-    bot.user.setActivity("hoakhelp", {
-      type: "LISTENING",
-    });
-  },
-};
+    logger.info(` ${bot.user.tag} is online `)
+    bot.user.setActivity('hoakhelp', {
+      type: 'LISTENING'
+    })
+  }
+}
